@@ -38,7 +38,7 @@ int main()
 			jumble[index2] = temp;
 		}
 
-		
+		cout << "\nWelcome to round " << x + 1 << " of 3\n";
 		cout << "Enter 'hint' for a hint.\n";
 		cout << "Enter 'quit' tpo quit the game.\n";
 		cout << "The jumble is: " << jumble;
@@ -65,12 +65,29 @@ int main()
 		{
 			cout << "\nThat's it! You guess it!\n";
 		}
-		cout << "\nThanks for playing.\n";
+		
 		if(guess == "quit")
 		{
 			break;
 		}
+
+		
+		if(x == 2)
+		{
+			label:
+			char c;
+			cout << "Do you want ot play again? Y/N\n";
+			cin >> c;
+			if (c == 'Y')
+			{
+				x = -1;
+			}else if(c != 'N')
+			{
+				goto label;
+			}
+		}
 		
 	}
+	cout << "\nThanks for playing.\n";
 	return 0;
 }
